@@ -23,7 +23,7 @@ node('Iaasimov-BuildNode')
   stage('Init') {
 
     sh '''
-      if [ -z "${INSTANCE_NAME} ] ; then
+      if [ -z "${INSTANCE_NAME}" ] ; then
         echo "[ERROR] Missing Parameter value : INSTANCE_NAME"
         exit 1
       fi
