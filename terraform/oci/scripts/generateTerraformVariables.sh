@@ -1,6 +1,8 @@
 #!/bin/bash
 
-CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+#CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+CURRENT_DIR="$( cd "$( dirname "$0" )" && pwd )"
+echo $CURRENT_DIR
 
 if [ $# != "2" ]; then 
   echo "Error. Insufficient Parameters"
@@ -27,8 +29,14 @@ rm -f $COMPUTE_PUBLIC_KEY
 echo "... Generating new keys"
 # generate a set of keys
 echo -e "y\n" | /usr/bin/ssh-keygen -t rsa -b 2048 -f $COMPUTE_PRIVATE_KEY -q -N ''
-ERR_CODE=${PIPESTATUS[1]}
-if [ $ERR_CODE -ne "0" ] ; then
+## Ubuntu does not support ${PIPESTATUS[1]} with sh. It however works with bash
+# ERR_CODE=${PIPESTATUS[1]}
+# if [ $ERR_CODE -ne "0" ] ; then
+# exit $ERR_CODE
+#fi
+
+### Checking the status of the last command
+if [ $? -ne "0" ] ; then
   exit $ERR_CODE
 fi
 
