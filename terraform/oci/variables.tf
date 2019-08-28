@@ -8,8 +8,7 @@ variable "compute_ssh_private_key" {}
 
 # Choose an Availability Domain
 
-variable "InstanceName"
-{
+variable "InstanceName" {
   default = "IaasimovDemo"
 }
 

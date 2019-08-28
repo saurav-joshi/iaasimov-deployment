@@ -49,7 +49,7 @@ resource "oci_core_security_list" "IaasimovSecurityList" {
     source    = "0.0.0.0/0"
     stateless = true
 
-    icmp_options {
+    icmp_options = {
       "type" = 3
       "code" = 4
     }
@@ -61,7 +61,7 @@ resource "oci_core_security_list" "IaasimovSecurityList" {
     source    = "0.0.0.0/0"
     stateless = false
 
-    tcp_options {
+    tcp_options = {
       // These values correspond to the destination port range.
       "min" = 5000
       "max" = 5002
@@ -74,7 +74,7 @@ resource "oci_core_security_list" "IaasimovSecurityList" {
     source    = "0.0.0.0/0"
     stateless = false
 
-    tcp_options {
+    tcp_options = {
       // These values correspond to the destination port range.
       "min" = 8080
       "max" = 8080
@@ -87,7 +87,7 @@ resource "oci_core_security_list" "IaasimovSecurityList" {
     source    = "0.0.0.0/0"
     stateless = false
 
-    tcp_options {
+    tcp_options = {
       // These values correspond to the destination port range.
       "min" = 8888
       "max" = 8888
