@@ -12,9 +12,9 @@ resource "null_resource" "remote-exec" {
   provisioner "remote-exec" {
     inline = [
     	"echo -e attach volume",
-			"sudo iscsiadm -m node -o new -T ${oci_core_volume_attachment.TFBlock0Attach.iqn} -p ${oci_core_volume_attachment.TFBlockAttach.ipv4}:${oci_core_volume_attachment.TFBlockAttach.port}",
-			"sudo iscsiadm -m node -o update -T ${oci_core_volume_attachment.TFBlock0Attach.iqn} -n node.startup -v automatic",
-			"echo sudo iscsiadm -m node -T ${oci_core_volume_attachment.TFBlock0Attach.iqn} -p ${oci_core_volume_attachment.TFBlockAttach.ipv4}:${oci_core_volume_attachment.TFBlockAttach.port} -l >> ~/.bashrc",
+			"sudo iscsiadm -m node -o new -T ${oci_core_volume_attachment.TFBlockAttach.iqn} -p ${oci_core_volume_attachment.TFBlockAttach.ipv4}:${oci_core_volume_attachment.TFBlockAttach.port}",
+			"sudo iscsiadm -m node -o update -T ${oci_core_volume_attachment.TFBlockAttach.iqn} -n node.startup -v automatic",
+			"echo sudo iscsiadm -m node -T ${oci_core_volume_attachment.TFBlockAttach.iqn} -p ${oci_core_volume_attachment.TFBlockAttach.ipv4}:${oci_core_volume_attachment.TFBlockAttach.port} -l >> ~/.bashrc",
       "echo -e Mounting block storage",
       "sudo mkfs -t ext4 /dev/sdb",
       "sudo mkdir /iaasimov",
