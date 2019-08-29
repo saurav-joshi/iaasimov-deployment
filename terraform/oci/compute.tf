@@ -12,7 +12,7 @@ resource "oci_core_instance" "Iaasimov_Instance" {
     hostname_label   = "${var.InstanceName}"
   }
 
-  metadata {
+  metadata =  {
     ssh_authorized_keys = "${file(var.compute_ssh_public_key)}"
   }
 
