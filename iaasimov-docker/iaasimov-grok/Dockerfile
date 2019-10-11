@@ -1,6 +1,6 @@
 FROM openjdk:latest
 WORKDIR /opt/iaasimov
-COPY iaasimov-0.5.1-SNAPSHOT.jar /opt/iaasimov
+COPY ../target/iaasimov-0.5.1-SNAPSHOT.jar /opt/iaasimov
 
 EXPOSE "8080:7070"
 
