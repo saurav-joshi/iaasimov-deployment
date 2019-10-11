@@ -9,7 +9,7 @@ rm -rf /iaasimov/GROK
 mkdir -p GROK
 unzip /home/opc/iaasimov-dockercompose.zip -d /iaasimov/GROK
 
-cd /iaasimov/GROK
+cd /iaasimov/GROK/iaasimov-docker
 /usr/local/bin/docker-compose build
 /usr/local/bin/docker-compose up -d
 
