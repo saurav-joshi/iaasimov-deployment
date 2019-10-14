@@ -2,7 +2,7 @@
 
 # Stop the container and remove, then start the new image
 mkdir -p /iaasimov/GROK
-cd /iaasimov/GROK
+cd /iaasimov/GROK/iaasimov-docker
 /usr/local/bin/docker-compose down
 cd ..
 rm -rf /iaasimov/GROK
