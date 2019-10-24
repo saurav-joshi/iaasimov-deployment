@@ -77,7 +77,7 @@ resource "oci_core_security_list" "IaasimovSecurityList" {
     tcp_options {
       // These values correspond to the destination port range.
       min = 8080
-      max = 8080
+      max = 8081
     }
   }
   
