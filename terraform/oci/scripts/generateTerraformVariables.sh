@@ -41,7 +41,7 @@ if [ $? -ne "0" ] ; then
 fi
 
 # Generate the TF file
-TARGET_FILE=$WORKING_DIR/$DEMO_NAME/$DEMO_NAME.tfvar
+TARGET_FILE=$WORKING_DIR/$DEMO_NAME/$DEMO_NAME.tfvars
 echo -e "tenancy_ocid=\"$TENANCY_OCID\"
 user_ocid=\"$USER_OCID\"
 fingerprint=\"$FINGERPRINT\"
