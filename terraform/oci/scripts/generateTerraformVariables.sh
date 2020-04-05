@@ -16,7 +16,8 @@ DEMO_NAME="$2"
 source $WORKING_DIR/credentials/oci_env
 mkdir -p $WORKING_DIR/$DEMO_NAME
 # OCI Account information
-PRIVATE_KEY="$WORKING_DIR/credentials/$OCI_API_PRIVATE_KEY"
+#PRIVATE_KEY="$WORKING_DIR/credentials/$OCI_API_PRIVATE_KEY"
+PRIVATE_KEY="$WORKING_DIR/apaccpt04/oci_api_key.pem"
 
 # Generate the ssh keys for the compute instance
 COMPUTE_PRIVATE_KEY=$WORKING_DIR/$DEMO_NAME/$DEMO_NAME.key
@@ -42,10 +43,10 @@ fi
 
 # Generate the TF file
 TARGET_FILE=$WORKING_DIR/$DEMO_NAME/$DEMO_NAME.tfvars
-echo -e "tenancy_ocid=\"$TENANCY_OCID\"
+echo "tenancy_ocid=\"$TENANCY_OCID\"
 user_ocid=\"$USER_OCID\"
 fingerprint=\"$FINGERPRINT\"
-private_key_path=\"$COMPUTE_PRIVATE_KEY\"
+private_key_path=\"$PRIVATE_KEY\"
 compartment_ocid=\"$COMPARTMENT_OCID\"
 compute_ssh_private_key=\"$COMPUTE_PRIVATE_KEY\"
 compute_ssh_public_key=\"$COMPUTE_PUBLIC_KEY\"
