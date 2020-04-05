@@ -17,7 +17,7 @@ source $WORKING_DIR/credentials/oci_env
 mkdir -p $WORKING_DIR/$DEMO_NAME
 # OCI Account information
 #PRIVATE_KEY="$WORKING_DIR/credentials/$OCI_API_PRIVATE_KEY"
-PRIVATE_KEY="$WORKING_DIR/apaccpt04/oci_api_key.pem"
+PRIVATE_KEY="/home/ubuntu/jenkins/workspace/apaccpt04/oci_api_key.pem"
 
 # Generate the ssh keys for the compute instance
 COMPUTE_PRIVATE_KEY=$WORKING_DIR/$DEMO_NAME/$DEMO_NAME.key
